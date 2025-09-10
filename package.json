@@ -1,13 +1,14 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "zara-chat",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "concurrently -n FRONT,BACK -c auto \"npm:dev:frontend\" \"npm:dev:backend\"",
     "dev:frontend": "vite",
     "dev:backend": "cd server && .venv/bin/python -m uvicorn app.main:app --reload --port 8787",
     "build": "vite build",
+    "vercel-build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc -p tsconfig.json"
   },
