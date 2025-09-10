@@ -1,0 +1,15 @@
+[project]
+name = "chatbot-backend"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.111",
+  "uvicorn[standard]>=0.30",
+  "pydantic>=2.7",
+  "python-dotenv>=1.0",
+  "httpx>=0.27",
+  "openai>=1.40",            # only needed if using OpenAI
+  "google-generativeai>=0.7" # only needed if using Gemini
+]
+[tool.uvicorn]
+factory = false
