@@ -42,7 +42,7 @@ A modern, full-stack AI chatbot application built with React, TypeScript, and Fa
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/zara-chat.git
+   git clone https://github.com/meet32001/zara-chat.git
    cd zara-chat
    ```
 
@@ -188,9 +188,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-Your Name - [@yourusername](https://github.com/yourusername) - your.email@example.com
+Meet Shah - [@meet32001](https://github.com/meet32001) - meet.shah@example.com
 
-Project Link: [https://github.com/yourusername/zara-chat](https://github.com/yourusername/zara-chat)
+Project Link: [https://github.com/meet32001/zara-chat](https://github.com/meet32001/zara-chat)
 
 ---
 
