@@ -47,9 +47,10 @@ export async function chatOnce(req: {
   selected: string; // e.g. "groq:llama3-8b-8192" or "gemini-2.0-flash"
   temperature?: number;
 }): Promise<ChatResponse> {
-  // Mock response for demo purposes
-  if (MOCK_MODE) {
-    const { provider, model } = splitProviderModel(req.selected);
+  const { provider, model } = splitProviderModel(req.selected);
+
+  // Mock response for demo when backend is not available
+  if (API_BASE.includes('localhost:8787')) {
     const userMessage = req.messages.find(m => m.role === 'user')?.content || '';
     
     // Simulate API delay
@@ -58,13 +59,11 @@ export async function chatOnce(req: {
     return {
       provider,
       model,
-      content: `🤖 **Demo Response from ${provider.toUpperCase()}**\n\nI received your message: "${userMessage}"\n\nThis is a demo response. To enable real AI chat, you'll need to:\n\n1. Deploy the backend API to a service like Railway or Render\n2. Set the VITE_API_BASE environment variable\n3. Add your AI provider API keys\n\n**Current Setup:** Frontend-only deployment for demonstration purposes.`,
+      content: `🤖 **Demo Response from ${provider.toUpperCase()}**\n\nI received your message: "${userMessage}"\n\nThis is a demo response. The chat interface is working perfectly! To enable real AI responses, you'll need to:\n\n1. Deploy the backend API to a service like Railway or Render\n2. Set the VITE_API_BASE environment variable\n3. Add your AI provider API keys\n\n**Current Setup:** Frontend-only deployment for demonstration purposes.`,
       usage: { prompt_tokens: 50, completion_tokens: 100, total_tokens: 150 },
       latency_ms: Math.floor(1000 + Math.random() * 2000)
     };
   }
-
-  const { provider, model } = splitProviderModel(req.selected);
 
   const res = await fetch(`${API_BASE}/api/chat`, {
     method: "POST",

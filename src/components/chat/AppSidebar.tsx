@@ -58,15 +58,13 @@ export function AppSidebar({ conversations, activeId, onSelect, onDelete }: AppS
                       <span className="truncate">{c.title}</span>
                       <span className="ml-2 hidden sm:flex items-center gap-1 opacity-70">
                         <Pin className="h-3.5 w-3.5" />
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          className="h-6 w-6"
+                        <button
+                          className="h-6 w-6 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                           onClick={(e) => { e.stopPropagation(); onDelete(c.id); }}
                           aria-label="Delete chat"
                         >
                           <Trash2 className="h-3.5 w-3.5" />
-                        </Button>
+                        </button>
                       </span>
                     </button>
                   </SidebarMenuButton>

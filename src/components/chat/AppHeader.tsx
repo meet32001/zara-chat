@@ -48,7 +48,7 @@ export function AppHeader({ onNewChat, model, setModel }: AppHeaderProps) {
             </SelectItem>
             <SelectItem value="gemini:gemini-2.0-flash">Gemini 2.0</SelectItem>
             <SelectItem value="gemini:gemini-1.5-pro">
-              Gemini 1.5 Pro
+              Gemini 1.5 Pro11
             </SelectItem>
 
             <SelectItem value="deepseek:deepseek-chat">
